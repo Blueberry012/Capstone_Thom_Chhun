@@ -1,0 +1,12 @@
+Context and Scope
+
+Dans le cadre d’un stage au sein de l’équipe data d’une PME de distribution agroalimentaire, je rejoins un projet de R&D déjà engagé sur le réapprovisionnement d’un produit frais à forte rotation. 
+L’équipe dispose d’un historique de ventes journalières depuis janvier 2023 (demande, promotions, périodes de fêtes, ruptures de stock) et de deux briques développées séparément : une prévision de la demande à 28 jours, comparée à une référence saisonnière naïve, et une politique de commande apprise par Q-learning dans un environnement simulé, comparée à une politique aléatoire et à une politique à seuil.
+La question posée par le CTO n’est pas de construire un nouveau modèle, mais de savoir si ces résultats figés et vérifiables suffisent à justifier une décision : lancer un essai limité, attendre, ou renoncer.
+Pour y répondre, je réexamine chaque brique avec ses propres preuves (origines de prévision d’un côté, épisodes simulés de l’autre), ses périodes d’échec et le coût réel d’une erreur.
+Dans ce contexte, une rupture fait perdre des ventes et un surstock finit à la poubelle.
+Comme les deux briques n’ont jamais été testées ensemble, la recommandation sera conditionnelle, avec une solution de repli transparente (commande à seuil ou validation humaine) et la preuve minimale à produire avant tout passage à l’échelle.
+
+Problematic
+
+Les résultats de prévision et d’apprentissage par renforcement obtenus en TD permettent-ils, chacun dans ses limites, de recommander un essai encadré du réapprovisionnement automatisé d’un produit frais, et à quelles conditions faut-il revenir à la règle manuelle ?
